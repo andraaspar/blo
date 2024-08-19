@@ -1,0 +1,23 @@
+:root {
+	--l--text: 90;
+	--cmax--text: 20;
+	--c--text: calc(
+		(1 - pow((var(--l--text) / 100 - 0.5) * 2, 4)) * var(--cmax--text)
+	);
+	--h--text: 40;
+
+	--l--em: 95;
+	--cmax--em: 20;
+	--c--em: calc((1 - pow((var(--l--em) / 100 - 0.5) * 2, 4)) * var(--cmax--em));
+	--h--em: 60;
+
+	--l--bg: 10;
+	--cmax--bg: 20;
+	--c--bg: calc((1 - pow((var(--l--bg) / 100 - 0.5) * 2, 4)) * var(--cmax--bg));
+	--h--bg: 20;
+
+	--l--a: 80;
+	--cmax--a: 50;
+	--c--a: calc((1 - pow((var(--l--a) / 100 - 0.5) * 2, 4)) * var(--cmax--a));
+	--h--a: 140;
+}

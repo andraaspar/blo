@@ -1,0 +1,32 @@
+html {
+	background-color: lch(var(--l--bg) var(--c--bg) var(--h--bg));
+	color: lch(var(--l--text) var(--c--text) var(--h--text));
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: system-ui, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	--l--1: var(--l--a);
+	--c--1: calc((1 - pow(var(--l--1) / 100, 4)) * 100);
+	--h--1: var(--h--a);
+	color: lch(var(--l--1) var(--c--1) var(--h--1));
+
+	&:hover {
+		--l--1: min(--l--a + 10, 100);
+	}
+	&:active {
+		--l--1: min(--l--a - 10, 100);
+	}
+}

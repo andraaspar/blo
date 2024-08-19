@@ -1,0 +1,51 @@
+.blo_button {
+	--l1: 70;
+	--cmax1: 50;
+	--c1: calc((1 - pow((var(--l1) / 100 - 0.5) * 2, 4)) * var(--cmax1));
+	--h1: 240;
+	--a1: 1;
+
+	--l2: var(--l1);
+	--cmax2: 50;
+	--c2: calc((1 - pow((var(--l2) / 100 - 0.5) * 2, 4)) * var(--cmax2));
+	--h2: var(--h1);
+	--a2: 0.1;
+
+	--l3: var(--l1);
+	--cmax3: 50;
+	--c3: calc((1 - pow((var(--l3) / 100 - 0.5) * 2, 4)) * var(--cmax3));
+	--h3: var(--h1);
+	--a3: 0;
+
+	color: lch(var(--l1) var(--c1) var(--h1) / var(--a1));
+	background-color: lch(var(--l2) var(--c2) var(--h2) / var(--a2));
+	border: 1px solid lch(var(--l3) var(--c3) var(--h3) / var(--a3));
+	/* border-radius: 0.5em; */
+	padding: 0.25em 0.5em;
+	user-select: none;
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	gap: 0.5em;
+	text-align: center;
+	align-items: baseline;
+	justify-content: safe center;
+
+	&:hover {
+		--l1: 80;
+		--a2: 0.2;
+	}
+	&:active {
+		--l1: 85;
+		--l2: 50;
+		--a2: 0.2;
+	}
+
+	&.ggi__success {
+		--h1: 140;
+	}
+
+	&.ggi__error {
+		--h1: 30;
+	}
+}
